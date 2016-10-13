@@ -56,5 +56,14 @@ class BuscoAyudaTest(unittest.TestCase):
         span = self.browser.find_element(By.XPATH, '//span[contains(text(), "Fulano Perez")]')
         self.assertIn('Fulano Perez', span.text)
 
+    def test_ver_detalle(self):
+        self.browser.get("http://127.0.0.1:8000")
+        span = self.browser.find_element(By.XPATH, '//span[contains(text(), "Fulano Perez")]')
+        span.click()
+
+        h2 = self.browser.find_element(By.XPATH, '//h2[contains(text(), "Fulano Perez")]')
+        self.assertIn('Fulano Perez', h2.text)
+
+
 if __name__ == '__main__':
     unittest.main()
