@@ -2,6 +2,7 @@ __author__ = 'hola'
 
 import unittest
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 class BuscoAyudaTest(unittest.TestCase):
     """docstring for ."""
@@ -11,7 +12,7 @@ class BuscoAyudaTest(unittest.TestCase):
     def  tearDown(self):
         #self.browser.quit()
         pass
-        
+
     def test_title(self):
         self.browser.get("http://127.0.0.1:8000")
         self.assertIn('Busco Ayuda', self.browser.title)
@@ -31,7 +32,7 @@ class BuscoAyudaTest(unittest.TestCase):
         experiencia = self.browser.find_element_by_id('id_aniosExperiencia')
         experiencia.send_keys('2')
 
-        self.browser.find_element_by_xpath("//select[id='id_tiposDeServicio']/option[text()='Desarrollador Web']").click()
+        self.browser.find_element_by_xpath('//select[@id=\'id_tiposDeServicio\']/option[text()=\'Desarrollador Web\']').click()
 
         telefono = self.browser.find_element_by_id('id_telefono')
         telefono.send_keys('37465827475')
@@ -52,7 +53,7 @@ class BuscoAyudaTest(unittest.TestCase):
         boton_grabar.click()
 
         self.browser.implicitly_wait(3)
-        span = self.browser.find_element(By.XPATH, '//span[text()=[Fulano Perez]]')
+        span = self.browser.find_element(By.XPATH, '//span[contains(text(), "Fulano Perez")]')
         self.assertIn('Fulano Perez', span.text)
 
 if __name__ == '__main__':
