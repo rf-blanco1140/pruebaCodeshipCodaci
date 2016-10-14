@@ -64,6 +64,25 @@ class BuscoAyudaTest(unittest.TestCase):
         h2 = self.browser.find_element(By.XPATH, '//h2[contains(text(), "Fulano Perez")]')
         self.assertIn('Fulano Perez', h2.text)
 
+    def test_login(self):
+        self.browser.get("http://127.0.0.1:8000")
+
+        login = self.browser.find_element_by_id('id_login')
+        login.click()
+
+        username = self.browser.find_element_by_id('id_login_username')
+        username.send_keys('NoEsOtroFulano')
+
+        password = self.browser.find_element_by_id('id_login_password')
+        password.send_keys('clave123')
+
+        ingresar = self.browser.find_element_by_id('id_ingresar')
+        ingresar.click()
+
+        self.browser.implicitly_wait(3)
+        logout = self.browser.find_element_by_id('id_logout')
+
+
 
 if __name__ == '__main__':
     unittest.main()
