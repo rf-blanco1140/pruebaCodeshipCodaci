@@ -46,3 +46,6 @@ See also, a [ready-made application](https://github.com/heroku/python-getting-st
 
 ## Estado de la integracion
 [ ![Codeship Status for rf-blanco1140/pruebaCodeshipCodaci](https://app.codeship.com/projects/04d52290-8283-0134-ada8-36079b336971/status?branch=master)](https://app.codeship.com/projects/182518)
+
+##Estado del codigo
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd51a0652b994fe58424212c133a0883)](https://www.codacy.com/app/blancos2004/pruebaCodeshipCodaci?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rf-blanco1140/pruebaCodeshipCodaci&amp;utm_campaign=Badge_Grade)
